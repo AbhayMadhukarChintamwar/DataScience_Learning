@@ -6,6 +6,6 @@ while n > 0:
 
 print()
 
-data = [1,'Abhay',99.9,True,[1,2,3],(4,5,6),{'name':'Abhay','age':30}]
+data = [1,'Abhay',99.9,True,[1,2,3],(4,5,6),{'name':'Abhay','age':24}]
 for item in data:
     print(item, end=' ')
