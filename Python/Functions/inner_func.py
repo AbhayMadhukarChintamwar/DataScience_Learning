@@ -4,5 +4,8 @@ def outer():
     def inner():
         print("In inner function")
 
-    inner()  # Calling the inner function
-outer()  # Calling the outer function
+    # inner() # Calling the inner function
+    return inner
+
+something =outer()
+something()
