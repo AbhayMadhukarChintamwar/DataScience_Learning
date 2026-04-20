@@ -12,6 +12,9 @@ try:
 except Exception as e:
     print("An error occurred : ",e)
 
+finally:
+    print("This block will always execute")
+
 print('End of the execution')
 
 
