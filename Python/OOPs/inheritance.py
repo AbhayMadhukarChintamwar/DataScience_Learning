@@ -16,7 +16,14 @@ class B(A):
     def f4(self):
         print('F4 works')
 
-obj = B()
+class C(B):
+
+    def f5(self):
+        print('F5 works')
+
+
+
+obj = C()
 obj.f1()
 obj.f3()
-
+obj.f5()
