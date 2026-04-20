@@ -3,27 +3,27 @@
 from threading import Thread
 from time import sleep
 
-class MyThread(Thread):
-
-    def run(self):
-        for i in range(5):
-            print('Hello ', i+1)
-            sleep(.3)
 
 
-class MyThread2(Thread):
+def Hello():
+    for i in range(5):
+        print('Hello ', i+1)
+        sleep(.3)
 
-    def run(self):
-        for i in range(5):
-            print('Hi ', i+1)
-            sleep(.3)
+
+
+
+def Hi():
+    for i in range(5):
+        print('Hi ', i+1)
+        sleep(.3)
 
 
 
 if __name__ == '__main__':
 
-    t1 = MyThread()
-    t2 = MyThread2()
+    t1 = Thread(target=Hello)
+    t2 = Thread(target=Hi)
 
     t1.start()
     t2.start()
