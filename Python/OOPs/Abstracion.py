@@ -1,5 +1,14 @@
+from abc import ABC, abstractmethod
 
 
+class PaymentGateway(ABC):
+    @abstractmethod
+    def pay(self):
+        pass
+
+class CoderPay(PaymentGateway):
+    def pay(self):
+        print('paying with CoderPay...')
 
 class RazorPay:
     def pay(self):
@@ -15,5 +24,7 @@ class Purchase:
         self.gateway.pay()
 
 gateway1 = RazorPay()
-purchase1 = Purchase(gateway1)
-purchase1.checkout()
+gateway2 = CoderPay()
+purchase = Purchase(gateway2)
+
+purchase.checkout()
