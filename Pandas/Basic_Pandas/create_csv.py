@@ -3,10 +3,10 @@ import random
 from datetime import datetime, timedelta
 
 # number of rows (change to 200000, 500000, 1000000 etc.)
-num_rows = 100000  
+num_rows = 100
 
 # file name
-file_name = "finance_big_data.csv"
+file_name = "finance_small_data.csv"
 
 # sample values
 companies = ["TCS", "Infosys", "Reliance", "HDFC", "ICICI", "Wipro"]
@@ -20,15 +20,15 @@ columns = ["Date", "Company", "Sector", "Transaction_Type", "Price", "Quantity",
 pd.DataFrame(columns=columns).to_csv(file_name, index=False)
 
 # chunk size (important for large data)
-chunk_size = 10000
+chunk_size = 100
 
 for i in range(0, num_rows, chunk_size):
     data = []
 
     for _ in range(chunk_size):
         date = start_date + timedelta(days=random.randint(0, 1500))
-        price = round(random.uniform(100, 5000), 2)
-        quantity = random.randint(1, 1000)
+        price = round(random.uniform(100, 50), 2)
+        quantity = random.randint(1, 10)
 
         data.append([
             date.strftime("%Y-%m-%d"),
