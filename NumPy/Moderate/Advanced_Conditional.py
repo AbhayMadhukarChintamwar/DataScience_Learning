@@ -37,10 +37,10 @@ print(np.argwhere(matrix_2d > 2))  # Output: [[[0 1 0]]
 
 mask = np.logical_and(matrix_2d > 2, matrix_2d < 5)  # True for elements greater than 2 and less than 5
 print('Logical AND condition (matrix_2d > 2 and matrix_2d < 5) :')
-print(mask)  # Output: [[False False False]
-             #          [ True  True  True]
+print(mask)  # Output: [[False False True]
+             #          [ True  False  False]
              #          [False False False]]
-print(matrix_2d[mask])  # Output: [3 4 5]
+print(matrix_2d[mask])  # Output: [3 4 ]
 
 mask = np.logical_or(matrix_2d < 2, matrix_2d > 3)  # True for elements less than 2 or greater than 3
 print('Logical OR condition (matrix_2d < 2 or matrix_2d > 3) :')
@@ -59,8 +59,8 @@ print(matrix_2d[mask]) # Output: [1 2 3 4 5]
 
 mask = np.logical_xor(matrix_2d > 2, matrix_2d < 5)  # True for elements greater than 2 or less than 5 but not both
 print('Logical XOR condition (matrix_2d > 2 xor matrix_2d < 5) :')
-print(mask)  # Output: [[False False False]
-             #          [ True False  True]
-             #          [False False False]]
-print(matrix_2d[mask])
+print(mask)  # Output: [[True  True  False]
+             #          [False True  True]
+             #          [True  True  True]]
+print(matrix_2d[mask]) #[1 2 5 6 7 8 9]
 
