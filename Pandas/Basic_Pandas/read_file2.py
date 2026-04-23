@@ -2,12 +2,12 @@ import pandas as pd
 
 df = pd.read_csv('finance_small_data.csv')
 dataframe = pd.DataFrame(df)
-# print(dataframe)
+print(dataframe)
 
 # sort
 sort = df.sort_values(by=['Total_Value'],ascending=False)
-# print('Sort the total value in descending order : ')
-# print(sort)
+print('Sort the total value in descending order : ')
+print(sort)
 
             # Sort the total value in descending order :
             #           Date   Company   Sector Transaction_Type  Price  Quantity  Total_Value
@@ -26,12 +26,12 @@ sort = df.sort_values(by=['Total_Value'],ascending=False)
             # [100 rows x 7 columns]
 
 
-# print(df.loc[df['Total_Value']==986.40])
+print(df.loc[df['Total_Value']==986.40])
 
             #          Date  Company   Sector Transaction_Type  Price  Quantity  Total_Value
             # 56  2021-10-03  Infosys  Finance             Sell  98.64        10        986.4
 
-# print(df['Total_Value']==733.00)
+print(df['Total_Value']==733.00)
 
             # 0     False
             # 1     False

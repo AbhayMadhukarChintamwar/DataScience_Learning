@@ -229,3 +229,33 @@ print(df.duplicated('Total_Value'))
             # 99998    False
             # 99999    False
             # Length: 100000, dtype: bool
+
+print(df['Quantity'].value_counts().head())
+
+            # Quantity
+            # 699    132
+            # 267    129
+            # 986    128
+            # 261    127
+            # 432    127
+            # Name: count, dtype: int64
+
+print(df['Company'].value_counts().head())
+
+            # Company
+            # ICICI       16838
+            # Wipro       16799
+            # HDFC        16718
+            # Reliance    16610
+            # Infosys     16523
+            # Name: count, dtype: int64
+
+print(df['Price'].value_counts().head())
+
+            # Price
+            # 3802.75    5
+            # 4506.02    5
+            # 4076.99    4
+            # 1292.27    4
+            # 4228.04    4
+            # Name: count, dtype: int64
