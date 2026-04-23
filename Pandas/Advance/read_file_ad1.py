@@ -32,3 +32,25 @@ print(df.sort_values(by='Ratio',ascending=False).head())
                 # 85016  2020-05-23       TCS       IT             Sell  2156.49      1000    2156490.0  1000.0
                 # 54072  2020-06-29     ICICI   Energy              Buy  4135.07      1000    4135070.0  1000.0
                 # 8435   2023-08-16  Reliance  Banking              Buy  2690.20      1000    2690200.0  1000.0
+
+print(df['Ratio'].value_counts())
+
+
+            # Ratio
+            # 8.0      125
+            # 2.0      120
+            # 261.0    118
+            # 267.0    115
+            # 64.0     112
+            #         ...
+            # 926.0      1
+            # 61.0       1
+            # 152.0      1
+            # 281.0      1
+            # 953.0      1
+            # Name: count, Length: 3008, dtype: int64
+
+
+# How many words have a Ratio 267.0?  //115
+
+print(df[df['Ratio']==267.0].shape)  # (115, 8)
