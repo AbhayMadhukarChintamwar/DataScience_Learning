@@ -2,12 +2,12 @@ import pandas as pd
 
 df = pd.read_csv('finance_small_data.csv')
 dataframe = pd.DataFrame(df)
-print(dataframe)
+# print(dataframe)
 
 # sort
 sort = df.sort_values(by=['Total_Value'],ascending=False)
-print('Sort the total value in descending order : ')
-print(sort)
+# print('Sort the total value in descending order : ')
+# print(sort)
 
             # Sort the total value in descending order :
             #           Date   Company   Sector Transaction_Type  Price  Quantity  Total_Value
@@ -26,12 +26,12 @@ print(sort)
             # [100 rows x 7 columns]
 
 
-print(df.loc[df['Total_Value']==986.40])
+# print(df.loc[df['Total_Value']==986.40])
 
             #          Date  Company   Sector Transaction_Type  Price  Quantity  Total_Value
             # 56  2021-10-03  Infosys  Finance             Sell  98.64        10        986.4
 
-print(df['Total_Value']==733.00)
+# print(df['Total_Value']==733.00)
 
             # 0     False
             # 1     False
@@ -45,3 +45,36 @@ print(df['Total_Value']==733.00)
             # 98    False
             # 99    False
             # Name: Total_Value, Length: 100, dtype: bool
+
+
+# What is the most common total value
+print(df['Price'].describe())
+
+
+            # count    100.000000
+            # mean      73.551700
+            # std       14.619988
+            # min       50.060000
+            # 25%       61.070000
+            # 50%       73.475000
+            # 75%       85.392500
+            # max       99.820000
+            # Name: Price, dtype: float64
+
+
+print(df['Price'].mode())
+            # 0    89.77
+            # Name: Price, dtype: float64
+
+
+
+# value_counts()
+print(df['Price'].value_counts().head())
+
+            # Price
+            # 89.77    2
+            # 81.49    1
+            # 85.20    1
+            # 75.56    1
+            # 73.30    1
+            # Name: count, dtype: int64
