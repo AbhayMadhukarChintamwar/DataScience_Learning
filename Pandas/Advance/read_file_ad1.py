@@ -56,3 +56,17 @@ print(df['Ratio'].value_counts())
 print(df[df['Ratio']==267.0].shape)  # (115, 8)
 
 print(df.query('Ratio == 267.0').shape)  # (115, 8)
+
+
+# What is the maximum Price of the words with a Ratio 267.0?   // 4979.3
+
+print(df.query('Ratio ==  267.0').sort_values(by='Price', ascending = False).head())
+
+            #              Date   Company   Sector Transaction_Type    Price  Quantity  Total_Value  Ratio
+            # 63258  2020-06-11      HDFC  Banking             Sell  4979.30       267   1329473.10  267.0
+            # 9437   2023-12-18  Reliance   Energy              Buy  4965.20       267   1325708.40  267.0
+            # 55723  2021-03-24     ICICI  Banking             Sell  4890.03       267   1305638.01  267.0
+            # 28199  2021-09-26     ICICI  Finance              Buy  4888.95       267   1305349.65  267.0
+            # 67625  2022-11-08      HDFC  Banking             Sell  4820.41       267   1287049.47  267.0
+
+print(df.loc[df['Ratio']==267.0,'Price'].max())  # 4979.3
