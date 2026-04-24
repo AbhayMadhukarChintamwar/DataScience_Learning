@@ -5,6 +5,34 @@ matrix = np.array([[1, 2, 3],
 print("Matrix:\n", matrix)
 print("Shape:", matrix.shape)
 
-arr = np.ones((2,3,4))
+arr = np.ones((3,3,3), dtype ='bool')
 
 print(arr)
+
+                # [[[ True  True  True]
+                #   [ True  True  True]
+                #   [ True  True  True]]
+
+                #  [[ True  True  True]
+                #   [ True  True  True]
+                #   [ True  True  True]]
+
+                #  [[ True  True  True]
+                #   [ True  True  True]
+                #   [ True  True  True]]]
+
+
+arr = np.ones((3,3,3), dtype ='int')
+print(arr)
+
+                # [[[1 1 1]
+                #   [1 1 1]
+                #   [1 1 1]]
+
+                #  [[1 1 1]
+                #   [1 1 1]
+                #   [1 1 1]]
+
+                #  [[1 1 1]
+                #   [1 1 1]
+                #   [1 1 1]]]
