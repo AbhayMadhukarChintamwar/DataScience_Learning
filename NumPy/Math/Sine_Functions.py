@@ -33,3 +33,11 @@ print('Tangent Values :',np.sin(arr)/np.cos(arr))
 angles = np.array(([0,np.pi,np.pi/2]))
 print(np.sin(angles))
             # [0.0000000e+00 1.2246468e-16 1.0000000e+00]
+
+
+#  cumsum function
+
+arr = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+a = np.cumsum(arr)
+print(a)
+            # [ 1  3  6 10 15 21 28 36 45 55]
