@@ -61,4 +61,12 @@ print(arr)
 # Create random function  -> rand()- the random module's rand() method returns a random float between 0 and 1
 
 arr = np.random.rand(5)
-print(arr)   # [0.1936349  0.7294812  0.04395402 0.5470296  0.36930658]
+print(arr)       # [0.1936349  0.7294812  0.04395402 0.5470296  0.36930658]
+
+
+arr = np.random.rand(3,4)
+print(arr)
+
+                # [[0.33813632 0.32891442 0.30914899 0.64250485]
+                #  [0.74456296 0.99442786 0.92856096 0.17922669]
+                #  [0.83979184 0.03382966 0.42609758 0.98180577]]
