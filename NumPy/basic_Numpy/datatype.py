@@ -41,3 +41,4 @@ print(arr.dtype) # Output: bool This shows the data type of the elements in the 
 arr = np.array([1.3, 2.5, 3.7], dtype=int) # This creates a 1D array with float values, but we explicitly specify the data type as integer. As a result, the float values will be truncated to integers (the decimal part will be discarded).
 print(arr) # Output: [1 2 3] This creates a 1D array with float values, but we explicitly specify the data type as integer. As a result, the float values will be truncated to integers (the decimal part will be discarded), resulting in an array where all elements are treated as integers: [1, 2, 3].
 print(arr.dtype) # Output: int64 (or int32 depending on the system) This shows the data type of the elements in the array, which is an integer type (int64 or int32) as specified when creating the array.
+# Print the all zeros number

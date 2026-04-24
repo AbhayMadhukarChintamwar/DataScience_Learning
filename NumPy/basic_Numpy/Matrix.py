@@ -4,3 +4,7 @@ matrix = np.array([[1, 2, 3],
 
 print("Matrix:\n", matrix)
 print("Shape:", matrix.shape)
+
+arr = np.ones((2,3,4))
+
+print(arr)
