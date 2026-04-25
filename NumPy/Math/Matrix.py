@@ -167,3 +167,57 @@ print(inverse_matrix)
             # [[-2.   1. ]
             #  [ 1.5 -0.5]]
 
+
+# Power Function
+
+Power_of_Identity_Matrix = np.linalg.matrix_power(matrix_1, 0)
+
+print('Normal Matrix :')
+print(matrix_1)
+print()
+print('Identity Matrix :')
+print(Power_of_Identity_Matrix)
+
+            # Normal Matrix :
+            # [[1 2]
+            #  [3 4]]
+
+            # Identity Matrix :
+            # [[1 0]
+            #  [0 1]]
+
+
+
+Power_of_multiply_matrix = np.linalg.matrix_power(matrix_1, 2)
+
+print('Normal Matrix :')
+print(matrix_1)
+print()
+print('Multiply Matrix :')
+print(Power_of_multiply_matrix)
+
+            # Normal Matrix :
+            # [[1 2]
+            #  [3 4]]
+
+            # Multiply Matrix :
+            # [[ 7 10]
+            #  [15 22]]
+
+
+
+Power_of_inverse_matrix = np.linalg.matrix_power(matrix_1, -2)
+
+print('Normal Matrix :')
+print(matrix_1)
+print()
+print('Inverse Multiply Matrix :')
+print(Power_of_inverse_matrix)
+
+            # Normal Matrix :
+            # [[1 2]
+            #  [3 4]]
+
+            # Inverse Multiply Matrix :
+            # [[ 5.5  -2.5 ]
+            #  [-3.75  1.75]]
