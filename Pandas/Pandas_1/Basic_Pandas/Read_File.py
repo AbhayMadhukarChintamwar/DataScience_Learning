@@ -105,8 +105,8 @@ print()
             #       dtype='str')
 
 
-find_Index = df['Price']
-print(find_Index)
+find_Single_Index = df['Price']
+print(find_Single_Index)
 print()
 
             # 0        4965.44
@@ -122,4 +122,40 @@ print()
             # 99999    1468.79
             # Name: Price, Length: 100000, dtype: float64
 
+
+#  NOTE :  Data store in this manner =>   dataframe --> index --> series
+
+
+find_multiple_Index = df[['Company','Sector','Price']]
+print(find_multiple_Index)
+print()
+
+            #         Company   Sector    Price
+            # 0         Wipro  Finance  4965.44
+            # 1      Reliance  Banking  1163.57
+            # 2       Infosys  Finance   569.79
+            # 3           TCS       IT  4821.96
+            # 4      Reliance  Finance   795.51
+            # ...         ...      ...      ...
+            # 99995       TCS  Banking  2327.18
+            # 99996       TCS   Energy  4973.21
+            # 99997  Reliance  Banking  3571.17
+            # 99998       TCS       IT  4961.80
+            # 99999  Reliance  Finance  1468.79
+
+            # [100000 rows x 3 columns]
+
+
+find_data_Types = df.dtypes
+print(find_data_Types)
+print()
+
+                # Date                    str
+                # Company                 str
+                # Sector                  str
+                # Transaction_Type        str
+                # Price               float64
+                # Quantity              int64
+                # Total_Value         float64
+                # dtype: object
 
