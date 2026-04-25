@@ -65,3 +65,29 @@ append_2d = np.append(arr_2d, [[4],[5]], axis = 1)
 print(append_2d)
             # [[ 5 32 32 44  5 55  4]
             #  [45 42  3  4 54 65  5]]
+
+
+# Delete
+
+arr = np.array([5,32,32,44,5,55])
+delete_arr = np.delete(arr, [1])
+print(delete_arr) # [ 5 32 44  5 55]
+
+arr_2d = np.array([[5,32,32,44,5,55],
+                   [45,42,3,4,54,65],
+                   [44,23,33,42,88,66]])
+
+delete_2d = np.delete(arr_2d,[[1]], axis = 0)
+print(delete_2d)
+            # [[ 5 32 32 44  5 55]
+            #  [44 23 33 42 88 66]]
+
+arr_2d = np.array([[5,32,32,44,5,55],
+                   [45,42,3,4,54,65],
+                   [44,23,33,42,88,66]])
+
+delete_2d = np.delete(arr_2d,[[4]], axis = 1)
+print(delete_2d)
+            # [[ 5 32 32 44 55]
+            #  [45 42  3  4 65]
+            #  [44 23 33 42 66]]
