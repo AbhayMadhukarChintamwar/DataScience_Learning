@@ -145,3 +145,63 @@ print()
             # 11999        12000  Employee_12000         IT             Auditor       Wipro          2026  Bangalore   999198               9.5       2025
 
             # [12000 rows x 10 columns]
+
+
+# Categorical() --> this function gives how many categories are available in given data
+
+categorical = pd.Categorical(df['Company'])
+print(categorical)
+print()
+            # ['Microsoft ', 'Amazon', 'TCS', 'Microsoft ', 'Accenture', ..., 'Microsoft ', 'Deloitte', 'TCS', 'Wipro', 'Wipro']
+            # Length: 12000
+            # Categories (8, str): ['Accenture', 'Amazon', 'Deloitte', 'Google', 'Infosys', 'Microsoft ', 'TCS',Wipro']
+
+
+#  Unique() --> this function gives how many unique data are available.
+
+Unique_data = df['Salary'].unique()
+print(Unique_data)
+print()
+            # [1514341 1495105 1387438 ...  650399 1551349  999198]
+
+# Condition
+
+Conditions_Statements =  df['Salary']>1000000
+print(Conditions_Statements)
+print()
+
+            # 0         True
+            # 1         True
+            # 2         True
+            # 3         True
+            # 4         True
+            #          ...
+            # 11995     True
+            # 11996     True
+            # 11997    False
+            # 11998     True
+            # 11999    False
+            # Name: Salary, Length: 12000, dtype: bool
+
+Conditions_Statements_Info = df[df['Salary']>1000000]
+print(Conditions_Statements_Info)
+print()
+
+#        Employee_ID            Name Department                Role     Company  current_Year       City   Salary  Experience_Years  last_Year
+# 0                1      Employee_1         IT   Backend Developer  Microsoft           2026     Mumbai  1514341               2.4       2025
+# 1                2      Employee_2    Finance     DevOps Engineer      Amazon          2026       Pune  1495105               8.9       2025
+# 2                3      Employee_3         IT  Frontend Developer         TCS          2026  Hyderabad  1387438              13.9       2025
+# 3                4      Employee_4         IT   Software Engineer  Microsoft           2026       Pune  1345806               0.6       2025
+# 4                5      Employee_5         IT      Data Scientist   Accenture          2026       Pune  1962417              10.2       2025
+# ...            ...             ...        ...                 ...         ...           ...        ...      ...               ...        ...
+# 11990        11991  Employee_11991    Finance   Financial Analyst      Google          2026     Mumbai  1884604              11.1       2025
+# 11991        11992  Employee_11992         IT        Risk Manager       Wipro          2026     Mumbai  1758479               8.4       2025
+# 11995        11996  Employee_11996    Finance   Investment Banker  Microsoft           2026      Delhi  1537932               1.0       2025
+# 11996        11997  Employee_11997    Finance   Investment Banker    Deloitte          2026      Delhi  1970199               6.9       2025
+# 11998        11999  Employee_11999         IT      Data Scientist       Wipro          2026      Delhi  1551349               9.0       2025
+
+# [7104 rows x 10 columns]
+
+
+print(len(df[df['Salary']>1000000])) # 7104
+print()
