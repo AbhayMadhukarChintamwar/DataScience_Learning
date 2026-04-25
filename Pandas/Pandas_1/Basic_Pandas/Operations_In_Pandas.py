@@ -108,3 +108,41 @@ print()
             # 16   363332  Microsoft
             # 18   971856     Infosys
             # 20   984228    Deloitte
+
+# df['current_Year']= 2026
+# print(df)
+
+            #       Employee_ID            Name Department                Role     Company       City   Salary  Experience_Years  current_Year
+            # 0                1      Employee_1         IT   Backend Developer  Microsoft      Mumbai  1514341               2.4          2026
+            # 1                2      Employee_2    Finance     DevOps Engineer      Amazon       Pune  1495105               8.9          2026
+            # 2                3      Employee_3         IT  Frontend Developer         TCS  Hyderabad  1387438              13.9          2026
+            # 3                4      Employee_4         IT   Software Engineer  Microsoft        Pune  1345806               0.6          2026
+            # 4                5      Employee_5         IT      Data Scientist   Accenture       Pune  1962417              10.2          2026
+            # ...            ...             ...        ...                 ...         ...        ...      ...               ...           ...
+            # 11995        11996  Employee_11996    Finance   Investment Banker  Microsoft       Delhi  1537932               1.0          2026
+            # 11996        11997  Employee_11997    Finance   Investment Banker    Deloitte      Delhi  1970199               6.9          2026
+            # 11997        11998  Employee_11998         IT   Financial Analyst         TCS  Hyderabad   650399               8.8          2026
+            # 11998        11999  Employee_11999         IT      Data Scientist       Wipro      Delhi  1551349               9.0          2026
+            # 11999        12000  Employee_12000         IT             Auditor       Wipro  Bangalore   999198               9.5          2026
+
+            # [12000 rows x 9 columns]
+
+df.insert(loc=5,column='current_Year', value = 2026)
+print(df)
+print()
+
+            #        Employee_ID            Name Department                Role     Company  current_Year       City   Salary  Experience_Years
+            # 0                1      Employee_1         IT   Backend Developer  Microsoft           2026     Mumbai  1514341               2.4
+            # 1                2      Employee_2    Finance     DevOps Engineer      Amazon          2026       Pune  1495105               8.9
+            # 2                3      Employee_3         IT  Frontend Developer         TCS          2026  Hyderabad  1387438              13.9
+            # 3                4      Employee_4         IT   Software Engineer  Microsoft           2026       Pune  1345806               0.6
+            # 4                5      Employee_5         IT      Data Scientist   Accenture          2026       Pune  1962417              10.2
+            # ...            ...             ...        ...                 ...         ...           ...        ...      ...               ...
+            # 11995        11996  Employee_11996    Finance   Investment Banker  Microsoft           2026      Delhi  1537932               1.0
+            # 11996        11997  Employee_11997    Finance   Investment Banker    Deloitte          2026      Delhi  1970199               6.9
+            # 11997        11998  Employee_11998         IT   Financial Analyst         TCS          2026  Hyderabad   650399               8.8
+            # 11998        11999  Employee_11999         IT      Data Scientist       Wipro          2026      Delhi  1551349               9.0
+            # 11999        12000  Employee_12000         IT             Auditor       Wipro          2026  Bangalore   999198               9.5
+
+            # [12000 rows x 9 columns]
+
