@@ -27,5 +27,15 @@ arr = np.array([5,32,32,44,5,55])
 print(np.unique(arr, return_index = True, return_counts = True))  # (array([ 5, 32, 44, 55]), array([0, 1, 3, 5]), array([2, 2, 1, 1]))
 
 
+# resize
+
+arr = np.array([5,32,32,44,5,55])
+print(np.resize(arr,(2,3)))
+            # [[ 5 32 32]
+            #  [44  5 55]]
 
 
+# insert function
+
+arr = np.array([5,32,32,44,5,55])
+print(np.insert(arr,3,60))  # [ 5 32 32 60 44  5 55]
