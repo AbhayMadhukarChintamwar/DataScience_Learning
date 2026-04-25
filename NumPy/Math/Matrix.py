@@ -105,8 +105,8 @@ matrix_2 = np.matrix([[5, 6],
 
 # Transpose functions
 normal_matrix = np.matrix([[1,2,3,],
-                         [4,5,6],
-                         [7,8,9]])
+                           [4,5,6],
+                           [7,8,9]])
 
 # transpose_matrix = np.transpose(normal_matrix)
 transpose_matrix = normal_matrix.T
@@ -221,3 +221,11 @@ print(Power_of_inverse_matrix)
             # Inverse Multiply Matrix :
             # [[ 5.5  -2.5 ]
             #  [-3.75  1.75]]
+
+# Determinant
+normal_matrix = np.matrix([[11,13,15],
+                           [12,14,16],
+                           [10,11,12]])
+
+Determinant_Matrix = np.linalg.det(normal_matrix)
+print(Determinant_Matrix) #1.4210854715201997e-14
