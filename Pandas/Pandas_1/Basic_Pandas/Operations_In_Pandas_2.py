@@ -167,36 +167,95 @@ print(df.reset_index())
             # [12000 rows x 9 columns]
 
 
-#  Convert Dictionary to data frame
 
-Dictionary = {'key1':[1,2,3,4,5],
-              'key2':[6,7,8,9,10],
-             'key3':[11,12,13,14,15]}
+#  Convert salary
 
-print(Dictionary)
-            # {'key1': [1, 2, 3, 4, 5], 'key2': [6, 7, 8, 9, 10], 'key3': [11, 12, 13, 14, 15]}
+df['Salary_INR'] = df['Salary'].apply(lambda x : x * 100)
+print(df)
+
+            #      Employee_ID            Name Department                Role     Company       City   Salary  Experience_Years  Salary_INR
+            # 0                1      Employee_1         IT   Backend Developer  Microsoft      Mumbai  1514341               2.4   151434100
+            # 1                2      Employee_2    Finance     DevOps Engineer      Amazon       Pune  1495105               8.9   149510500
+            # 2                3      Employee_3         IT  Frontend Developer         TCS  Hyderabad  1387438              13.9   138743800
+            # 3                4      Employee_4         IT   Software Engineer  Microsoft        Pune  1345806               0.6   134580600
+            # 4                5      Employee_5         IT      Data Scientist   Accenture       Pune  1962417              10.2   196241700
+            # ...            ...             ...        ...                 ...         ...        ...      ...               ...         ...
+            # 11995        11996  Employee_11996    Finance   Investment Banker  Microsoft       Delhi  1537932               1.0   153793200
+            # 11996        11997  Employee_11997    Finance   Investment Banker    Deloitte      Delhi  1970199               6.9   197019900
+            # 11997        11998  Employee_11998         IT   Financial Analyst         TCS  Hyderabad   650399               8.8    65039900
+            # 11998        11999  Employee_11999         IT      Data Scientist       Wipro      Delhi  1551349               9.0   155134900
+            # 11999        12000  Employee_12000         IT             Auditor       Wipro  Bangalore   999198               9.5    99919800
+
+            # [12000 rows x 9 columns]
 
 
-Dictionary_To_DataFrame  =  pd.DataFrame(Dictionary)
-print(Dictionary_To_DataFrame)
 
-            #    key1  key2  key3
-            # 0     1     6    11
-            # 1     2     7    12
-            # 2     3     8    13
-            # 3     4     9    14
-            # 4     5    10    15
+# another type to convert salary
 
-print(Dictionary_To_DataFrame.min().transpose())
-            # key1     1
-            # key2     6
-            # key3    11
-            # dtype: int64
+def euro_inr(x):
+    return x * 80
+df['Salary_INR'] = df['Salary'].apply(euro_inr)
+print(df)
 
-print(Dictionary_To_DataFrame.min().transpose())
+            #        Employee_ID            Name Department                Role     Company       City   Salary  Experience_Years  Salary_INR
+            # 0                1      Employee_1         IT   Backend Developer  Microsoft      Mumbai  1514341               2.4   121147280
+            # 1                2      Employee_2    Finance     DevOps Engineer      Amazon       Pune  1495105               8.9   119608400
+            # 2                3      Employee_3         IT  Frontend Developer         TCS  Hyderabad  1387438              13.9   110995040
+            # 3                4      Employee_4         IT   Software Engineer  Microsoft        Pune  1345806               0.6   107664480
+            # 4                5      Employee_5         IT      Data Scientist   Accenture       Pune  1962417              10.2   156993360
+            # ...            ...             ...        ...                 ...         ...        ...      ...               ...         ...
+            # 11995        11996  Employee_11996    Finance   Investment Banker  Microsoft       Delhi  1537932               1.0   123034560
+            # 11996        11997  Employee_11997    Finance   Investment Banker    Deloitte      Delhi  1970199               6.9   157615920
+            # 11997        11998  Employee_11998         IT   Financial Analyst         TCS  Hyderabad   650399               8.8    52031920
+            # 11998        11999  Employee_11999         IT      Data Scientist       Wipro      Delhi  1551349               9.0   124107920
+            # 11999        12000  Employee_12000         IT             Auditor       Wipro  Bangalore   999198               9.5    79935840
 
-            #       0   1   2   3   4
-            # key1   1   2   3   4   5
-            # key2   6   7   8   9  10
-            # key3  11  12  13  14  15
+            # [12000 rows x 9 columns]
 
+#  Calculate length of Role
+
+df['Role_Length'] = df['Role'].apply(len)
+print(df)
+
+            #       Employee_ID            Name Department                Role     Company       City   Salary  Experience_Years  Salary_INR  Role_Length
+            # 0                1      Employee_1         IT   Backend Developer  Microsoft      Mumbai  1514341               2.4   121147280           17
+            # 1                2      Employee_2    Finance     DevOps Engineer      Amazon       Pune  1495105               8.9   119608400           15
+            # 2                3      Employee_3         IT  Frontend Developer         TCS  Hyderabad  1387438              13.9   110995040           18
+            # 3                4      Employee_4         IT   Software Engineer  Microsoft        Pune  1345806               0.6   107664480           17
+            # 4                5      Employee_5         IT      Data Scientist   Accenture       Pune  1962417              10.2   156993360           14
+            # ...            ...             ...        ...                 ...         ...        ...      ...               ...         ...          ...
+            # 11995        11996  Employee_11996    Finance   Investment Banker  Microsoft       Delhi  1537932               1.0   123034560           17
+            # 11996        11997  Employee_11997    Finance   Investment Banker    Deloitte      Delhi  1970199               6.9   157615920           17
+            # 11997        11998  Employee_11998         IT   Financial Analyst         TCS  Hyderabad   650399               8.8    52031920           17
+            # 11998        11999  Employee_11999         IT      Data Scientist       Wipro      Delhi  1551349               9.0   124107920           14
+            # 11999        12000  Employee_12000         IT             Auditor       Wipro  Bangalore   999198               9.5    79935840            7
+
+            # [12000 rows x 10 columns]
+
+#  Conditional statement on experience  years
+
+def Check_Exp(x):
+    if x<3:
+        return 'Fresher Level'
+    elif x >= 3 and x < 7:
+        return 'Moderate Level'
+    else:
+        return 'Advance Level'
+
+df['Check_Experience'] = df['Experience_Years'].apply(Check_Exp)
+print(df)
+
+            #        Employee_ID            Name Department                Role     Company       City   Salary  Experience_Years  Salary_INR  Role_Length Check_Experience
+            # 0                1      Employee_1         IT   Backend Developer  Microsoft      Mumbai  1514341               2.4   121147280           17    Fresher Level
+            # 1                2      Employee_2    Finance     DevOps Engineer      Amazon       Pune  1495105               8.9   119608400           15    Advance Level
+            # 2                3      Employee_3         IT  Frontend Developer         TCS  Hyderabad  1387438              13.9   110995040           18    Advance Level
+            # 3                4      Employee_4         IT   Software Engineer  Microsoft        Pune  1345806               0.6   107664480           17    Fresher Level
+            # 4                5      Employee_5         IT      Data Scientist   Accenture       Pune  1962417              10.2   156993360           14    Advance Level
+            # ...            ...             ...        ...                 ...         ...        ...      ...               ...         ...          ...              ...
+            # 11995        11996  Employee_11996    Finance   Investment Banker  Microsoft       Delhi  1537932               1.0   123034560           17    Fresher Level
+            # 11996        11997  Employee_11997    Finance   Investment Banker    Deloitte      Delhi  1970199               6.9   157615920           17   Moderate Level
+            # 11997        11998  Employee_11998         IT   Financial Analyst         TCS  Hyderabad   650399               8.8    52031920           17    Advance Level
+            # 11998        11999  Employee_11999         IT      Data Scientist       Wipro      Delhi  1551349               9.0   124107920           14    Advance Level
+            # 11999        12000  Employee_12000         IT             Auditor       Wipro  Bangalore   999198               9.5    79935840            7    Advance Level
+
+            # [12000 rows x 11 columns]
