@@ -150,6 +150,21 @@ pd.set_option ('display.max_colwidth',500)
 df4 = pd.DataFrame({'description':[" I am a dedicated tech enthusiast who loves building scalable applications and exploring intelligent systems. I enjoy solving complex problems using efficient algorithms and modern technologies."]})
 print(df4)
 
-            #              description
+            #                                                                                                                                                                                       description
             # 0   I am a dedicated tech enthusiast who loves building scalable applications and exploring intelligent systems. I enjoy solving complex problems using efficient algorithms and modern technologies.
 
+pd.set_option ('display.max_colwidth',500)
+df4 = pd.DataFrame({'description':[" I am a dedicated tech enthusiast who loves building scalable applications and exploring intelligent systems. I enjoy solving complex problems using efficient algorithms and modern technologies.","I'm  learning Python Libraries", "I'm a Data Science Engineer"]})
+print(df4)
+            #                                                                                                                                                                                       description
+            # 0   I am a dedicated tech enthusiast who loves building scalable applications and exploring intelligent systems. I enjoy solving complex problems using efficient algorithms and modern technologies.
+            # 1                                                                                                                                                                      I'm  learning Python Libraries
+            # 2                                                                                                                                                                         I'm a Data Science Engineer
+
+df4['length'] = df4['description'].apply(len)
+print(df4)
+
+            #                                                                                                                                                                                         description       length
+            # 0   I am a dedicated tech enthusiast who loves building scalable applications and exploring intelligent systems. I enjoy solving complex problems using efficient algorithms and modern technologies.     194
+            # 1                                                                                                                                                                      I'm  learning Python Libraries      30
+            # 2                                                                                                                                                                         I'm a Data Science Engineer      27
