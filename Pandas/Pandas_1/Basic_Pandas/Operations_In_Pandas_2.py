@@ -187,4 +187,16 @@ print(Dictionary_To_DataFrame)
             # 3     4     9    14
             # 4     5    10    15
 
-print(Dictionary_TO_DataFrame.min().transpose())
+print(Dictionary_To_DataFrame.min().transpose())
+            # key1     1
+            # key2     6
+            # key3    11
+            # dtype: int64
+
+print(Dictionary_To_DataFrame.min().transpose())
+
+            #       0   1   2   3   4
+            # key1   1   2   3   4   5
+            # key2   6   7   8   9  10
+            # key3  11  12  13  14  15
+
