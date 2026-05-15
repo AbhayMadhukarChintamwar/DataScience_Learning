@@ -20,4 +20,6 @@ print(matrix) # Output: ['1' '2' '3' 'gre' '1.5']
 print(ndMatrix) # Output: [[1 2 3]
                     #      [4 5 6]]
 
+                    
+
 
